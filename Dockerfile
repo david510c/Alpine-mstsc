@@ -2,9 +2,9 @@ FROM node:alpine
 
 MAINTAINER David Chen <david@davidchen.blog>
 
-RUN npm install --prefix mstsc -g https://github.com/citronneur/mstsc.js/tarball/master
+RUN npm install --prefix gitfiles -g https://github.com/citronneur/mstsc.js/tarball/master
 
-WORKDIR /mstsc/lib/node_modules/mstsc.js
+WORKDIR /gitfiles/lib/node_modules/mstsc.js
 
 EXPOSE 9250 
 
