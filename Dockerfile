@@ -2,10 +2,10 @@ FROM node:alpine
 
 MAINTAINER David Chen <david@davidchen.blog>
 
-RUN apk update
-RUN apk add git
-RUN git clone https://github.com/david510c/mstsc.js.git
-RUN cd /mstsc.js && npm install
+RUN npm install --prefix mstsc -g https://github.com/citronneur/mstsc.js/tarball/master
 
-EXPOSE 8080
-CMD ["node", "/mstsc.js/server.js"]
+WORKDIR /mstsc/lib/node_modules/mstsc.js
+
+EXPOSE 9250 
+
+CMD ["node", "server.js"]
